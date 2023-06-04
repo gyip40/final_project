@@ -1,5 +1,3 @@
-//package final_project;
-
 public class Boba {
 
     private int size;
