@@ -56,13 +56,13 @@ public class Boba {
         this.topping = topping;
     }
 
-    public String toString(Boba boba) {
+    public static String toString(Boba boba) {
         String result = "";
-        result += "SIZE:   " + boba.getSize() + "\n";
-        result += "ICE LEVEL:   " + iceLevel + "\n";
-        result += "SUGAR LEVEL:   " + sugarLevel + "\n";
-        result += "DRINK:   " + drink + "\n";
-        result += "TOPPING:   " + topping + "\n";
+        result += "SIZE:          " + boba.getSize() + "\n";
+        result += "ICE LEVEL:     " + boba.getIceLevel() + "\n";
+        result += "SUGAR LEVEL:   " + boba.getSugarLevel() + "\n";
+        result += "DRINK:         " + boba.getDrink() + "\n";
+        result += "TOPPING:       " + boba.getTopping() + "\n";
         return result;
     }
 
