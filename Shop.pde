@@ -1,9 +1,7 @@
 private PImage bell;
 private PImage standard;
-private PImage drink;
 private PFont font;
 
-// private Menu currentMenu;
 private String name = "";
 private int currentScore = 0;
 private int cummulativeScore = 0;
@@ -15,18 +13,18 @@ private String[] dialogues0 = new String[] {"Are you ready to start?\n\n   Yes  
                                             "What's your name?\n\n",
                                             "NAME PLACEHOLDER",
                                             "Let's get started with the basics.",
-                                            "You'll get orders on the counter.",
-                                            "Your job is to fill out those orders to the best of your\nability.",
-                                            "Let's do a test run."
+                                            "You'll get orders and your job is to fill out those\norders to the best of your ability.",
+                                            "Let's practice."
                                            };
-private int[] yesno0 = new int[] {1, 0, 0, 0, 0, 0, 0, 0};
-private boolean[] willContinue0 = new boolean[] {true, false, false, false, false, false, false, false};
+private int[] yesno0 = new int[] {1, 0, 0, 0, 0, 0, 0};
+private boolean[] willContinue0 = new boolean[] {true, false, false, false, false, false, false};
 private int tempChoice = 1;
 private Dialogue dialogue0 = new Dialogue(dialogues0, yesno0, willContinue0, tempChoice);
 private boolean popUp1_finished = false;
 private boolean popUp2_finished = false;
 private boolean popUp3_finished = false;
 private boolean bottle = false;
+private Drink drink = new Drink();
 
 void setup() {
   frameRate(100);
@@ -34,7 +32,6 @@ void setup() {
   //load images
   bell = loadImage("shop_morning_bell.png");
   standard = loadImage("shop_morning.png");
-  drink = loadImage("drink.png");
   //load font
   font = loadFont("font2.vlw");
   noStroke();
@@ -59,7 +56,7 @@ void draw() {
     fill(0);
     dialogue0.display();
     dialogue0.yesno();
-    delay(100);
+    delay(80);
     dialogue0.keyTyped();
     dialogue0.mouseClicked();
     //delay(100);
@@ -71,7 +68,7 @@ void draw() {
       dialogue0.setContinue(2, true);  
       dialogue0.setCurrentNum(2);
     }
-    if (dialogue0.getCurrentNum() == 7) {
+    if (dialogue0.getCurrentNum() == 6) {
       popUp1 = false;
       popUp1_finished = true;
       bottle = true;
@@ -79,7 +76,10 @@ void draw() {
   }
   if (popUp1_finished && !popUp2_finished) {
     if (bottle) {
+      fill(0, 65);
+      rect(0, 0, 1000, 800);
       bottle();
+      drink.translate(100, 100);
     }
   }
 }
@@ -97,7 +97,7 @@ void popUp() {
 }
 
 void bottle() {
-  
+  drink.drawDrink();
 }
 
 void keyTyped() {

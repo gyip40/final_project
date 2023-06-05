@@ -8,10 +8,14 @@ public class Menu {
     
     public Menu() {
         sizes = new int[] {1, 2, 3};
-        iceLevels = new int[] {0, 25, 50, 75};
+        iceLevels = new int[] {0, 25, 50};
         sugarLevels = new int[] {0, 25, 50, 75};
-        drinkSelection = new String[] {"Oolong tea", "Black tea", "Milk tea", "Green tea", "Fresh milk"};
-        toppingSelection = new String[] {"Pearls", "Auyu Jelly", "Grass Jelly", "Cheese foam"};
+        drinkSelection = new String[] {"oolong tea", "black tea", "milk tea", "green tea", "fresh milk"};
+        toppingSelection = new String[] {"pearls", "auyu jelly", "grass jelly"};
+    }
+
+    public Boba getBoba() {
+        return randomDrink;
     }
 
     public void generateSize() {

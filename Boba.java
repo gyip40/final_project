@@ -54,7 +54,7 @@ public class Boba {
         this.topping = topping;
     }
 
-    public static String toString(Boba boba) {
+    public String toString(Boba boba) {
         String result = "";
         result += "SIZE:          " + boba.getSize() + "\n";
         result += "ICE LEVEL:     " + boba.getIceLevel() + "\n";
