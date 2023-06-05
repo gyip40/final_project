@@ -57,7 +57,6 @@ void draw() {
     dialogue0.display();
     dialogue0.yesno();
     delay(80);
-    delay(80);
     dialogue0.keyTyped();
     dialogue0.mouseClicked();
     //delay(100);
@@ -70,7 +69,6 @@ void draw() {
       dialogue0.setCurrentNum(2);
     }
     if (dialogue0.getCurrentNum() == 6) {
-    if (dialogue0.getCurrentNum() == 6) {
       popUp1 = false;
       popUp1_finished = true;
       bottle = true;
@@ -80,10 +78,7 @@ void draw() {
     if (bottle) {
       fill(0, 65);
       rect(0, 0, 1000, 800);
-      fill(0, 65);
-      rect(0, 0, 1000, 800);
       bottle();
-      drink.translate(100, 100);
       drink.translate(100, 100);
     }
   }
@@ -102,7 +97,6 @@ void popUp() {
 }
 
 void bottle() {
-  drink.drawDrink();
   drink.drawDrink();
 }
 
