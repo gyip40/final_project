@@ -25,7 +25,6 @@ private boolean popUp2_finished = false;
 private boolean popUp3_finished = false;
 private boolean bottle = false;
 private Drink drink = new Drink();
-private Drink drink = new Drink();
 
 void setup() {
   frameRate(100);
