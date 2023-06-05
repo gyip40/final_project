@@ -12,7 +12,7 @@ private boolean popUp1 = false;
 private String[] dialogues0 = new String[] {"Are you ready to start?\n\n   Yes                  No",
                                             "What's your name?\n\n",
                                             "NAME PLACEHOLDER",
-                                            "Let's get started with the basics.",
+                                            "Let's get started.",
                                             "You'll get orders and your job is to fill out those\norders to the best of your ability.",
                                             "Let's practice."
                                            };
@@ -24,6 +24,7 @@ private boolean popUp1_finished = false;
 private boolean popUp2_finished = false;
 private boolean popUp3_finished = false;
 private boolean bottle = false;
+private Drink drink = new Drink();
 private Drink drink = new Drink();
 
 void setup() {
@@ -57,6 +58,7 @@ void draw() {
     dialogue0.display();
     dialogue0.yesno();
     delay(80);
+    delay(80);
     dialogue0.keyTyped();
     dialogue0.mouseClicked();
     //delay(100);
@@ -69,6 +71,7 @@ void draw() {
       dialogue0.setCurrentNum(2);
     }
     if (dialogue0.getCurrentNum() == 6) {
+    if (dialogue0.getCurrentNum() == 6) {
       popUp1 = false;
       popUp1_finished = true;
       bottle = true;
@@ -78,7 +81,10 @@ void draw() {
     if (bottle) {
       fill(0, 65);
       rect(0, 0, 1000, 800);
+      fill(0, 65);
+      rect(0, 0, 1000, 800);
       bottle();
+      drink.translate(100, 100);
       drink.translate(100, 100);
     }
   }
@@ -97,6 +103,7 @@ void popUp() {
 }
 
 void bottle() {
+  drink.drawDrink();
   drink.drawDrink();
 }
 
