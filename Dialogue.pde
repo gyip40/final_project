@@ -11,14 +11,13 @@ public class Dialogue {
     this.willContinue = willContinue;
     this.currentNum = 0;
     this.choice = choice;
-
   }
   
   public int getCurrentNum() {
     return currentNum;
   }
   
-  void setCurrentNum (int newCurrentNum) {
+  public void setCurrentNum (int newCurrentNum) {
     this.currentNum = newCurrentNum;
   }
   
@@ -26,23 +25,31 @@ public class Dialogue {
     return yesno[currentNum];
   }
   
-  void setYesnoNum (int newYesnoNum) {
+  public void setYesnoNum (int newYesnoNum) {
     this.yesno[currentNum] = newYesnoNum;
   }
   
-  boolean getContinue (int continueNum) {
+  public int getChoice() {
+    return choice;
+  }
+  
+  public void setChoice(int newChoice) {
+    choice = newChoice;
+  }
+  
+  public boolean getContinue (int continueNum) {
     return willContinue[continueNum];
   }
   
-  void setContinue (int continueNum, boolean condition) {
+  public void setContinue (int continueNum, boolean condition) {
     willContinue[continueNum] = condition;
   }
   
-  void setDialogue (int index, String newDialogue) {
+  public void setDialogue (int index, String newDialogue) {
     dialogue[index] = newDialogue;
   }
   
-   void display() {
+  void display() {
     if (currentNum < dialogue.length && willContinue[currentNum]) {
       text(dialogue[currentNum], 40, 740);
     }
@@ -53,7 +60,7 @@ public class Dialogue {
       if (yesno[currentNum] == 1) {
         textAlign(LEFT, CENTER);
         fill(0);
-        if (choice == 1) {
+        if (tempChoice == 1) {
           text("\n\n>", 40, 740);
         }
         else {
@@ -65,7 +72,7 @@ public class Dialogue {
   
   void mouseClicked() {
     if (mousePressed == true && yesno[currentNum] == 1) {
-        if (choice == 1) {
+        if (tempChoice == 1) {
           currentNum++;
           this.setContinue(currentNum, true);
         }
@@ -79,15 +86,18 @@ public class Dialogue {
   void keyTyped() {
     if (keyPressed) {
       if (keyCode == RIGHT) {
-        choice = 0;
+        tempChoice = 0;
       }
       if (keyCode == LEFT) {
-        choice = 1;
+        tempChoice = 1;
       }
       if (key == ENTER && yesno[currentNum] == 1) {
-        if (choice == 1) {
+        if (tempChoice == 1) {
           currentNum++;
           this.setContinue(currentNum, true);
+        }
+        if (tempChoice == 0) {
+          choice = 0;
         }
       }
       if (key == ENTER && yesno[currentNum] == 0 && currentNum != 1) {

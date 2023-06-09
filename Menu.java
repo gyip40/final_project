@@ -7,15 +7,15 @@ public class Menu {
     private String[] toppingSelection;
     
     public Menu() {
-        sizes = new int[] {1, 2, 3};
-        iceLevels = new int[] {0, 25, 50};
-        sugarLevels = new int[] {0, 25, 50, 75};
-        drinkSelection = new String[] {"oolong tea", "black tea", "milk tea", "green tea", "fresh milk"};
-        toppingSelection = new String[] {"pearls", "auyu jelly", "grass jelly"};
+      sizes = new int[] {1, 2, 3};
+      iceLevels = new int[] {0, 25, 50};
+      sugarLevels = new int[] {0, 25, 50, 75};
+      drinkSelection = new String[] {"oolong tea", "black tea", "milk tea", "green tea", "fresh milk"};
+      toppingSelection = new String[] {"pearls", "aiyu jelly", "grass jelly"};
     }
-
+    
     public Boba getBoba() {
-        return randomDrink;
+      return randomDrink;
     }
     
     public void generateSize() {
@@ -54,7 +54,7 @@ public class Menu {
         generateSugarLevel();
         generateDrink();
         generateTopping();
-        System.out.println("-----------------------------------------");
-        System.out.println(randomDrink.toString());
+        //System.out.println("-----------------------------------------");
+        //System.out.println(randomDrink.toString());
     }
 }
