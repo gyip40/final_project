@@ -1,5 +1,3 @@
-private PImage toppingImage;
-
 public class Drink {
   //private static int orderNum = -1;
   
